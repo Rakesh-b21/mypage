@@ -108,3 +108,31 @@ body.dark-mode .promotions-achievements .achievements-list li em {
   outline: 2px solid #1976d2;
   outline-offset: 2px;
 }
+@media (max-width: 900px) {
+  body {
+    font-size: 0.97rem;
+  }
+  :root {
+    --h1-size: 2.1rem;
+    --h2-size: 1.5rem;
+    --h3-size: 1.2rem;
+    --section-margin: 1.2rem;
+    --section-padding: 0.7rem;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 0.93rem;
+  }
+  :root {
+    --h1-size: 1.5rem;
+    --h2-size: 1.1rem;
+    --h3-size: 1rem;
+    --section-margin: 0.5rem;
+    --section-padding: 0.3rem;
+  }
+  section, .section-card, .skills-coding-section {
+    padding: var(--section-padding);
+    margin-bottom: var(--section-margin);
+  }
+}

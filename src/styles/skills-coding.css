@@ -13,14 +13,14 @@
   background: #fff;
   border: 2.5px solid #d1e3f8;
   border-radius: 1.2rem 1.2rem 0 0;
-  padding: 0.7rem 2.2rem;
+  padding: 0.7rem 2.5rem;
   font-size: 1.13rem;
   color: #1976d2;
   font-weight: 700;
   letter-spacing: 0.01em;
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 1.1rem; /* Increased spacing between icon and text */
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(25,118,210,0.08);
   transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s, transform 0.13s;
@@ -50,7 +50,8 @@
   color: #1976d2;
 }
 .tab-card i {
-  font-size: 1.18rem;
+  font-size: 1.35rem; /* Slightly larger icon */
+  margin-right: 0.2rem;
   color: inherit;
 }
 .tab-card:focus-visible {
@@ -167,50 +168,46 @@
 /* --- Coding Profiles Grid & Icon Modernization --- */
 .profiles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.3rem 1.7rem;
-  align-items: center;
-  justify-items: center;
-  margin-top: 1.2rem;
-  margin-bottom: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
+  gap: 1.1rem;
+  width: 100%;
+  margin: 0 auto 2.2rem auto;
+  justify-content: center;
 }
 .profile-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.5rem;
-  background: none;
-  box-shadow: none;
-  border: none;
-  padding: 0.7rem 0.2rem 0.9rem 0.2rem;
-  border-radius: 0.9rem;
-  transition: box-shadow 0.18s, transform 0.18s;
-  cursor: pointer;
-  min-width: 120px;
-  max-width: 180px;
+  background: #fff;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: box-shadow 0.18s, border 0.18s, transform 0.18s;
+  min-width: 0;
+  padding: 0.7rem 0.7rem;
+  display: block;
+  width: max-content;
+  margin: 0 auto;
 }
 .profile-card a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.2rem;
   text-align: center;
   color: inherit;
   text-decoration: none;
+  min-width: 80px;
 }
 .profile-icon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
   display: block;
-  margin: 0 auto 0.2rem auto;
+  margin: 0 auto 0.15rem auto;
   border-radius: 0.5rem;
   background: transparent;
   box-shadow: 0 2px 8px rgba(25,118,210,0.07);
   transition: box-shadow 0.18s, transform 0.18s, background 0.18s;
+  font-size: 2rem;
 }
 .profile-card:hover .profile-icon,
 .profile-card:focus .profile-icon {
@@ -224,4 +221,103 @@
   margin: 0;
   font-weight: 600;
   letter-spacing: 0.01em;
+  word-break: break-word;
+}
+@media (max-width: 900px) {
+  .profiles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+    gap: 0.7rem;
+  }
+  .profile-card {
+    padding: 0.5rem 0.5rem;
+    width: max-content;
+    margin: 0 auto;
+  }
+  .profile-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .profiles-grid {
+    grid-template-columns: repeat(2, minmax(90px, max-content));
+    gap: 0.3rem;
+  }
+  .profile-card {
+    padding: 0.3rem 0.3rem;
+    width: max-content;
+    margin: 0 auto;
+  }
+  .profile-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+}
+
+/* --- Responsive Tweaks --- */
+@media (max-width: 900px) {
+  .tab-cards-container {
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+  .tab-card {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    min-width: 90px;
+  }
+  .profiles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.7rem;
+  }
+  .profile-card {
+    padding: 0.7rem 0.7rem;
+    font-size: 1rem;
+  }
+  .skills-grid, .unique-skills-grid, .minimal-skills {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.7rem;
+  }
+  .skill-card {
+    font-size: 0.99rem;
+    padding: 0.6rem 0.7rem;
+    gap: 0.6rem;
+  }
+}
+@media (max-width: 600px) {
+  .tab-cards-container {
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+  .tab-card {
+    font-size: 0.97rem;
+    padding: 0.5rem 0.7rem;
+    min-width: 70px;
+  }
+  .tab-content {
+    padding: 1.1rem 0.5rem 0.7rem 0.5rem;
+  }
+  .profiles-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+  .profile-card {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.97rem;
+    gap: 0.6rem;
+  }
+  .profile-icon {
+    font-size: 1.5rem;
+    margin-right: 0.2rem;
+  }
+  .skills-grid, .unique-skills-grid, .minimal-skills {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+  .skill-card {
+    font-size: 0.93rem;
+    padding: 0.5rem 0.5rem;
+    gap: 0.5rem;
+  }
 }

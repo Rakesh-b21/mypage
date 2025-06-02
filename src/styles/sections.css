@@ -491,6 +491,40 @@
     padding: 0.22em 0.7em;
   }
 }
+@media (max-width: 900px) {
+  .education.section-card {
+    padding: 1.2rem 1rem 1rem 1rem;
+    max-width: 98vw;
+    margin: 1.5rem auto 1rem auto;
+  }
+  .promotions-achievements {
+    padding: 1.2rem 0.7rem;
+    max-width: 99vw;
+  }
+  .timeline-content {
+    padding: 0.7rem 0.7rem;
+    max-width: 98vw;
+  }
+}
+@media (max-width: 600px) {
+  .education.section-card {
+    padding: 0.7rem 0.3rem 0.7rem 0.3rem;
+    max-width: 100vw;
+    margin: 0.7rem auto 0.7rem auto;
+  }
+  .promotions-achievements {
+    padding: 0.7rem 0.2rem;
+    max-width: 100vw;
+  }
+  .timeline-content {
+    padding: 0.5rem 0.2rem;
+    max-width: 100vw;
+  }
+  .achievements-list li {
+    padding: 0.7rem 0.5rem;
+    font-size: 0.97rem;
+  }
+}
 
 /* Accessibility: prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
