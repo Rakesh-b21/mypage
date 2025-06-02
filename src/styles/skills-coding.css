@@ -324,17 +324,19 @@
 
 .skill-card i {
   font-size: 1.35rem;
-  margin-right: 0.1rem;
+  margin-right: 1.2rem; /* More space after icon */
   flex-shrink: 0;
-  padding-left: 0.5rem; /* Add space from card start to icon */
+  padding-left: 1.2rem; /* More space before icon */
 }
 @media (max-width: 900px) {
   .skill-card i {
-    padding-left: 0.35rem;
+    padding-left: 0.8rem;
+    margin-right: 0.8rem;
   }
 }
 @media (max-width: 600px) {
   .skill-card i {
-    padding-left: 0.2rem;
+    padding-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 }
