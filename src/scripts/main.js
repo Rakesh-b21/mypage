@@ -136,6 +136,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Prevent right-click on certificate images (gallery and lightbox)
+    document.querySelectorAll('.cert-gallery-item img, #lightbox-img').forEach(img => {
+        img.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    });
+
     // Organic cascade fade-up: randomize --card-delay and --card-rot for each card in minimal sections
     function organicCascade(sectionSelector, cardSelector) {
       const section = document.querySelector(sectionSelector);

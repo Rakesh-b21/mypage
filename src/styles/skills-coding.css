@@ -282,7 +282,7 @@
   .skill-card {
     font-size: 0.99rem;
     padding: 0.6rem 0.7rem;
-    gap: 0.6rem;
+    gap: 1.1rem; /* Maintain more space on tablet */
   }
 }
 @media (max-width: 600px) {
@@ -318,6 +318,23 @@
   .skill-card {
     font-size: 0.93rem;
     padding: 0.5rem 0.5rem;
-    gap: 0.5rem;
+    gap: 0.8rem; /* Still more space than before on mobile */
+  }
+}
+
+.skill-card i {
+  font-size: 1.35rem;
+  margin-right: 0.1rem;
+  flex-shrink: 0;
+  padding-left: 0.5rem; /* Add space from card start to icon */
+}
+@media (max-width: 900px) {
+  .skill-card i {
+    padding-left: 0.35rem;
+  }
+}
+@media (max-width: 600px) {
+  .skill-card i {
+    padding-left: 0.2rem;
   }
 }
