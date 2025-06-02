@@ -198,16 +198,32 @@ document.addEventListener("DOMContentLoaded", function () {
     animateSectionHeading('.skills-coding-section');
     animateSectionHeading('.education');
 
-    // Project dropdown/collapsible logic
+    // Project dropdown/collapsible logic (only one open at a time)
     function setupProjectDropdowns() {
       const cards = document.querySelectorAll('.project-card.collapsible');
       cards.forEach(card => {
         const btn = card.querySelector('.project-toggle');
         const details = card.querySelector('.project-details');
-        const icon = btn.querySelector('i');
+        const icon = btn ? btn.querySelector('i') : null;
         if (!btn || !details) return;
-        card.addEventListener('click', (e) => {
-          if (e.target.closest('.project-details')) return;
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          // Close all other cards
+          cards.forEach(otherCard => {
+            if (otherCard !== card) {
+              const otherDetails = otherCard.querySelector('.project-details');
+              const otherBtn = otherCard.querySelector('.project-toggle');
+              const otherIcon = otherBtn ? otherBtn.querySelector('i') : null;
+              if (otherDetails) {
+                otherDetails.classList.remove('open');
+                otherDetails.style.display = 'none';
+              }
+              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+              if (otherIcon) otherIcon.classList.remove('rotate');
+              otherCard.classList.remove('open');
+            }
+          });
+          // Toggle this card
           const expanded = btn.getAttribute('aria-expanded') === 'true';
           btn.setAttribute('aria-expanded', !expanded);
           if (expanded) {
@@ -233,165 +249,10 @@ document.addEventListener("DOMContentLoaded", function () {
         details.classList.remove('open');
         details.style.display = 'none';
       }
+      const btn = card.querySelector('.project-toggle');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+      card.classList.remove('open');
+      const icon = btn ? btn.querySelector('i') : null;
+      if (icon) icon.classList.remove('rotate');
     });
-
-    // Form submission handling (contact form)
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
-        // Basic client-side validation
-        let valid = true;
-        Object.keys(data).forEach(key => {
-          const input = contactForm.querySelector(`[name="${key}"]`);
-          if (!data[key].trim()) {
-            valid = false;
-            input.classList.add('error');
-          } else {
-            input.classList.remove('error');
-          }
-        });
-        if (!valid) return;
-        // Simulate server response and reset form
-        setTimeout(() => {
-          alert('Message sent! We will get back to you soon.');
-          contactForm.reset();
-        }, 1000);
-      });
-    }
-
-    // Input field focus and blur effects
-    document.querySelectorAll('input, textarea').forEach(input => {
-      input.addEventListener('focus', function() {
-        this.parentNode.classList.add('focused');
-      });
-      input.addEventListener('blur', function() {
-        if (!this.value.trim()) {
-          this.parentNode.classList.remove('focused');
-        }
-      });
-    });
-
-    // Custom select dropdowns
-    document.querySelectorAll('.custom-select').forEach(select => {
-      const options = select.querySelectorAll('option');
-      const selected = select.querySelector('option[selected]');
-      if (selected) {
-        const placeholder = document.createElement('div');
-        placeholder.classList.add('select-placeholder');
-        placeholder.innerText = selected.innerText;
-        select.insertAdjacentElement('beforebegin', placeholder);
-        placeholder.addEventListener('click', function() {
-          this.nextElementSibling.classList.toggle('open');
-        });
-      }
-      options.forEach(option => {
-        if (option.value) {
-          const div = document.createElement('div');
-          div.classList.add('select-option');
-          div.innerText = option.innerText;
-          div.addEventListener('click', function() {
-            const placeholder = this.parentNode.previousElementSibling;
-            placeholder.innerText = this.innerText;
-            this.parentNode.classList.remove('open');
-            options.forEach(opt => opt.removeAttribute('selected'));
-            option.setAttribute('selected', 'selected');
-          });
-          select.insertAdjacentElement('afterend', div);
-        }
-      });
-      select.addEventListener('change', function() {
-        const placeholder = this.previousElementSibling;
-        const selectedOption = Array.from(this.querySelectorAll('option')).find(opt => opt.selected);
-        if (selectedOption) {
-          placeholder.innerText = selectedOption.innerText;
-        }
-      });
-    });
-
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
-      link.addEventListener('click', function() {
-        const menu = document.getElementById('mobile-menu');
-        if (menu) {
-          menu.classList.remove('open');
-          document.body.style.overflow = '';
-        }
-      });
-    });
-
-    // Keyboard navigation for custom select dropdowns
-    document.querySelectorAll('.custom-select').forEach(select => {
-      const options = select.querySelectorAll('.select-option');
-      const placeholder = select.previousElementSibling;
-      let focusedOption = null;
-      placeholder.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowDown') {
-          e.preventDefault();
-          if (!focusedOption) {
-            focusedOption = 0;
-          } else if (focusedOption < options.length - 1) {
-            focusedOption++;
-          }
-          options[focusedOption].classList.add('focused');
-          options[focusedOption].scrollIntoView({ block: "nearest" });
-        } else if (e.key === 'ArrowUp') {
-          e.preventDefault();
-          if (focusedOption > 0) {
-            options[focusedOption].classList.remove('focused');
-            focusedOption--;
-            options[focusedOption].classList.add('focused');
-            options[focusedOption].scrollIntoView({ block: "nearest" });
-          }
-        } else if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          if (focusedOption !== null) {
-            options[focusedOption].click();
-          }
-        }
-      });
-    });
-
-    // Accessibility improvements: ARIA attributes and keyboard navigation
-    document.querySelectorAll('.project-card').forEach(card => {
-      const toggle = card.querySelector('.project-toggle');
-      const details = card.querySelector('.project-details');
-      if (toggle && details) {
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('role', 'button');
-        toggle.setAttribute('tabindex', '0');
-        toggle.addEventListener('click', function() {
-          const expanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', !expanded);
-          if (expanded) {
-            details.classList.remove('open');
-            details.style.display = 'none';
-          } else {
-            details.classList.add('open');
-            details.style.display = 'block';
-          }
-        });
-        toggle.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggle.click();
-          }
-        });
-      }
-    });
-
-    // Form validation styles
-    const style = document.createElement('style');
-    style.innerHTML = `
-      .error {
-        border-color: red;
-      }
-      .error:focus {
-        outline: none;
-        box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
-      }
-    `;
-    document.head.appendChild(style);
-  });
+});
