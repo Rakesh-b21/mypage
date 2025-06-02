@@ -1,0 +1,110 @@
+:root {
+  --primary: #0078D7;
+  --accent: #00C6A7;
+  --background: #f8fafd;
+  --card-bg: #fff;
+  --text-color: #333;
+  --muted: #555;
+  --h1-size: 2.8rem;
+  --h2-size: 2rem;
+  --h3-size: 1.6rem;
+  --body-size: 1rem;
+  --line-height: 1.6;
+  --section-margin: 2rem;
+  --section-padding: 1.5rem;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: var(--body-size);
+  line-height: var(--line-height);
+  color: var(--text-color);
+  background: var(--background);
+}
+img { max-width: 100%; display: block; }
+a { color: var(--primary); text-decoration: none; }
+a:hover, a:focus { color: var(--accent); }
+.scroll-reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s, transform 0.7s; }
+.scroll-reveal.visible { opacity: 1; transform: none; }
+/* Unify font for all cards and headings */
+body, .glass-card, .project-card, .skill-card, .profile-card, .minimal-more .more-card, section > h2, .projects-heading {
+  font-family: 'Inter', 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Segoe UI', Arial, sans-serif;
+}
+
+body.dark-mode .section-card h2,
+body.dark-mode .projects-heading,
+body.dark-mode .cert-category {
+  color: var(--primary, #eaeaea) !important;
+  background: #232526 !important;
+  border-left: 4px solid var(--accent, #00C6A7);
+}
+
+body.dark-mode .promotions-achievements {
+  background: #232526 !important;
+}
+body.dark-mode .promotions-achievements h2,
+body.dark-mode .promotions-achievements .cert-category {
+  color: var(--primary, #eaeaea) !important;
+  background: #232526 !important;
+}
+body.dark-mode .promotions-achievements .achievements-list li {
+  background: #232526 !important;
+  color: #eaeaea !important;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+}
+body.dark-mode .promotions-achievements .achievements-list li strong,
+body.dark-mode .promotions-achievements .achievements-list li em {
+  color: #00C6A7 !important;
+}
+
+/* --- LIGHT MODE: Skills & Coding Profiles and Skill Card (if any overrides needed) --- */
+.tab-cards-container {
+  background: var(--card-bg, #fff);
+}
+.tab-card {
+  background: #fff;
+  color: #1976d2;
+  border-color: #d1e3f8;
+}
+.tab-card.active, .tab-card:focus {
+  background: #1976d2;
+  color: #fff;
+  border-color: #1976d2;
+}
+.tab-card:hover:not(.active) {
+  background: #f0f7ff;
+  color: #1565c0;
+  border-color: #90caf9;
+}
+.tab-card:active {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+.tab-content {
+  background: var(--card-bg, #fff);
+  color: #1976d2;
+}
+.skill-card {
+  background: #fff;
+  color: #1976d2;
+  border-color: #d1e3f8;
+}
+.skill-card.active, .skill-card:focus {
+  background: #1976d2;
+  color: #fff;
+  border-color: #1976d2;
+}
+.skill-card:hover:not(.active) {
+  background: #f0f7ff;
+  color: #1565c0;
+  border-color: #90caf9;
+}
+.skill-card:active {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+.skill-card:focus-visible {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+}

@@ -1,0 +1,266 @@
+.project-tag {
+  display: inline-block;
+  background: linear-gradient(90deg, #e0f7fa 0%, #b3e5fc 100%);
+  color: #0277bd;
+  font-weight: 600;
+  padding: 0.2em 0.8em;
+  border-radius: 16px;
+  font-size: 0.95em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  box-shadow: 0 2px 8px rgba(2,119,189,0.10);
+  border: 1px solid #b3e5fc;
+  text-shadow: 0 1px 8px #b3e5fc80;
+}
+
+.project-name {
+  color: #4fc3f7;
+  font-weight: bold;
+  font-size: 1.3em;
+  background: linear-gradient(90deg, #81d4fa 0%, #e1f5fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-emphasis-color: transparent;
+  text-shadow: 0 2px 8px #b3e5fc80, 0 1px 0 #fff;
+}
+
+/* Glassmorphism card for More About Me, Projects, and unified font for all cards */
+.glass-card, .project-card, .skill-card, .profile-card, .minimal-more .more-card {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 2px 12px 0 rgba(30,40,90,0.07), 0 1px 4px 0 rgba(30,40,90,0.04);
+  border-radius: 0.9rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(180,200,255,0.18);
+  font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', monospace;
+  color: var(--text-color, #23272f);
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin-bottom: 1.2rem;
+}
+
+/* Accent line for all cards */
+.glass-card::before, .project-card::before, .skill-card::before, .profile-card::before, .minimal-more .more-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 12%; bottom: 12%;
+  width: 4px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--accent-color, #6cf) 60%, transparent 100%);
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 0 0 var(--accent-color, #6cf);
+}
+.glass-card:focus::before, .glass-card:hover::before,
+.project-card:focus::before, .project-card:hover::before,
+.skill-card:focus::before, .skill-card:hover::before,
+.profile-card:focus::before, .profile-card:hover::before,
+.minimal-more .more-card:focus::before, .minimal-more .more-card:hover::before {
+  background: linear-gradient(180deg, var(--accent-color, #6cf) 0%, #fff 100%);
+  box-shadow: 0 0 8px 2px var(--accent-color, #6cf);
+  animation: accent-shimmer 1.2s linear;
+}
+
+/* More About Me grid layout */
+.minimal-more {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+}
+.minimal-more .more-card {
+  position: relative;
+  padding: 1.5rem 1.2rem 1.2rem 2.2rem;
+  min-height: 120px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  font-size: 1.08rem;
+  font-family: inherit;
+}
+.more-icon {
+  font-size: 2.1rem;
+  color: var(--accent-color, #6cf);
+  margin-top: 0.2rem;
+}
+.more-icon-simple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--accent-color, #6cf);
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border-radius: 50%;
+  margin-top: 0.2rem;
+  margin-right: 0.7rem;
+}
+
+/* Projects grid and card improvements */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.project-card {
+  position: relative;
+  padding: 1.1rem 1.1rem 0.7rem 1.7rem;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.05rem;
+  font-family: inherit;
+  background: rgba(255,255,255,0.18);
+  color: var(--text-color, #23272f);
+  border-radius: 0.9rem;
+  box-shadow: 0 2px 12px 0 rgba(30,40,90,0.07), 0 1px 4px 0 rgba(30,40,90,0.04);
+  border: 1.5px solid rgba(180,200,255,0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 0;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.project-card.collapsible {
+  cursor: pointer;
+}
+.project-card .project-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color, #23272f);
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0.7rem;
+  transition: color 0.2s;
+}
+.project-card .project-toggle[aria-expanded="true"] i {
+  transform: rotate(180deg);
+  transition: transform 0.2s;
+}
+.project-card .project-toggle[aria-expanded="false"] i {
+  transform: rotate(0deg);
+  transition: transform 0.2s;
+}
+.project-card .project-details {
+  transition: max-height 0.3s cubic-bezier(.4,0,.2,1), opacity 0.3s;
+  overflow: hidden;
+  opacity: 1;
+  max-height: 1000px;
+}
+.project-card .project-details[style*="display:none"] {
+  opacity: 0;
+  max-height: 0;
+  pointer-events: none;
+}
+.project-card .project-details {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-color, #23272f);
+  margin-top: 0.2rem;
+}
+.project-tags span {
+  background: rgba(108,220,255,0.13);
+  color: var(--accent-color, #6cf);
+  font-family: inherit;
+  font-size: 0.98rem;
+  border-radius: 0.6rem;
+  padding: 0.18rem 0.7rem;
+  margin-right: 0.5rem;
+  margin-top: 0.3rem;
+  display: inline-block;
+}
+
+/* Section headings unified */
+section > h2, .projects-heading {
+  font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', monospace;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text-color, #222);
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+/* Remove border and background from education timeline and items */
+.edu-timeline, .edu-item {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.edu-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.7rem 0 0.7rem 0;
+  margin-bottom: 0.2rem;
+  font-family: inherit;
+  background: rgba(255,255,255,0.18);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(30,40,90,0.06);
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+}
+.edu-content {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+}
+.edu-icon {
+  font-size: 1.7rem;
+  color: #6cf;
+  margin-right: 1rem;
+  margin-top: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: rgba(108,220,255,0.06);
+  border-radius: 0.7rem;
+  box-shadow: 0 1px 4px 0 rgba(30,40,90,0.07);
+}
+.edu-icon i {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+.edu-icon i:before {
+  content: "\f15c"; /* fa-file-alt (minimal document icon) */
+}
+
+/* Fix back-to-top button position */
+#back-to-top {
+  position: fixed;
+  right: 2.2rem;
+  bottom: 2.2rem;
+  z-index: 1000;
+  background: rgba(255,255,255,0.85);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px 0 rgba(30,40,90,0.10);
+  border: none;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+#back-to-top:hover {
+  background: #e0f7fa;
+  box-shadow: 0 4px 16px 0 rgba(30,40,90,0.13);
+}
+
+/* Remove .cert-gallery-item and related certificate card styles from this file. Use only in certificates.css. */

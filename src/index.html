@@ -1,276 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakesh B Choudhary - Portfolio</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Rakesh B Choudhary, Data Engineer and Software Developer specializing in ETL, Azure, and modern data solutions.">
+  <title>Rakesh B Choudhary - Portfolio</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/darkmode.css">
+  <link rel="stylesheet" href="styles/certificates.css">
+  <link rel="stylesheet" href="styles/skills-coding.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-photo">
-            <img src="images/profile-placeholder.png" alt="Profile Photo">
+  <!-- Sticky Navigation -->
+  <nav class="navbar" aria-label="Main Navigation">
+    <ul>
+      <li><a href="#about" aria-label="About Me">About</a></li>
+      <li><a href="#skills-coding-tabs" aria-label="Skills and Coding Profiles">Skills</a></li>
+      <li><a href="#experience" aria-label="Experience">Experience</a></li>
+      <li><a href="#projects" aria-label="Projects and Tools">Projects</a></li>
+      <li><a href="#certificates-gallery" aria-label="Certificates Gallery">Certificates</a></li>
+      <li><a href="#education" aria-label="Education">Education</a></li>
+      <li><a href="#more-about" aria-label="More About Me">More</a></li>
+      <li><a href="#chillout" aria-label="Chill Out">Chill Out</a></li>
+    </ul>
+    <button id="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero scroll-reveal" id="hero" aria-label="Hero">
+      <div class="hero-photo">
+        <img src="images/profilepic2.webp" alt="Profile Photo" loading="lazy">
+      </div>
+      <div class="hero-content">
+        <h1>Rakesh B Choudhary</h1>
+        <p class="tagline">Data Engineer | Software Developer</p>
+        <div class="hero-social">
+          <a href="#skills-coding-tabs" title="Skills & Coding Profiles" aria-label="Skills & Coding Profiles"><i class="fas fa-code"></i></a>
+          <a href="mailto:crakeshb0@gmail.com" title="Gmail" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+          <a href="https://linkedin.com/in/rakesh-b-choudhary-293722201" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
-        <div class="hero-content">
-            <h1>Rakesh B Choudhary</h1>
-            <p class="tagline">Data Engineer | Software Developer</p>
-            <div class="hero-social">
-                <!-- Replaced GitHub icon with a code symbol that links to the Coding Profiles section -->
-                <a href="#coding-profiles" title="Coding Profiles">
-                    <i class="fas fa-code"></i>
-                </a>
-                <a href="mailto:crakeshb0@gmail.com" title="Gmail">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://linkedin.com/in/rakesh-b-choudhary-293722201" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- ABOUT ME -->
-    <section class="about section-card" id="about">
-        <h2>About Me</h2>
-        <p>
-            Hi! I'm Rakesh, a passionate data engineer and software developer based in Bengaluru, India. I love building scalable data solutions and modernizing workflows. I thrive on solving complex problems and collaborating with diverse teams to deliver impactful results.
-        </p>
-        <ul class="highlights">
-            <li><i class="fas fa-rocket"></i> 3+ years in ETL & Data Engineering</li>
-            <li><i class="fas fa-award"></i> Promoted for leadership & innovation</li>
-            <li><i class="fas fa-cloud"></i> Azure Certified (AZ-900, AZ-204)</li>
-        </ul>
+    <!-- About Me -->
+    <section class="about section-card scroll-reveal" id="about" aria-label="About Me">
+      <h2>About Me</h2>
+      <p>
+        Results-driven software engineer with around 3 years of experience in ETL development and data engineering. Adept at designing and optimizing scalable ETL pipelines. Strong problem-solving skills and a commitment to innovation, with a track record of delivering high impact solutions in fast-paced environments. Promoted from Senior Software Engineer to Associate Consultant for leadership, technical excellence, and the ability to navigate complex challenges in data-driven projects.
+      </p>
     </section>
 
-    <!-- SKILLS -->
-    <section class="skills section-card" id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
+    <!-- Skills & Coding Profiles -->
+    <section class="section-card skills-coding-section scroll-reveal" id="skills-coding-tabs" aria-label="Skills and Coding Profiles">
+      <div class="tab-cards-container">
+        <div class="tab-card active" data-tab="skills" tabindex="0" aria-label="Show Skills">
+          <i class="fas fa-tools"></i>
+          <span>Skills</span>
+        </div>
+        <div class="tab-card" data-tab="profiles" tabindex="0" aria-label="Show Coding Profiles">
+          <i class="fas fa-laptop-code"></i>
+          <span>Coding Profiles</span>
+        </div>
+      </div>
+      <div class="tab-content">
+        <div id="skills" class="tab-panel active">
+          <div class="skills-grid unique-skills-grid minimal-skills">
+            <div class="skill-card"><i class="fas fa-project-diagram"></i> ETL Development</div>
+            <div class="skill-card"><i class="fas fa-database"></i> Data Engineering</div>
             <div class="skill-card"><i class="fas fa-code"></i> Python</div>
+            <div class="skill-card"><i class="fas fa-coffee"></i> Java</div>
+            <div class="skill-card"><i class="fas fa-bolt"></i> PySpark</div>
             <div class="skill-card"><i class="fas fa-database"></i> SQL</div>
-            <div class="skill-card"><i class="fab fa-java"></i> Java</div>
-            <div class="skill-card"><i class="fas fa-cogs"></i> ETL (Informatica, PySpark)</div>
-            <div class="skill-card"><i class="fas fa-cloud"></i> Azure, Snowflake</div>
-            <div class="skill-card"><i class="fas fa-chart-bar"></i> Power BI, Tableau</div>
-            <div class="skill-card"><i class="fab fa-github"></i> GitHub</div>
-            <div class="skill-card"><i class="fas fa-users"></i> Leadership</div>
+            <div class="skill-card"><i class="fas fa-cogs"></i> Informatica PowerCenter</div>
+            <div class="skill-card"><i class="fas fa-table"></i> Regulatory Reporting</div>
+            <div class="skill-card"><i class="fas fa-chart-bar"></i> Power BI</div>
+            <div class="skill-card"><i class="fas fa-chart-pie"></i> Tableau</div>
+            <div class="skill-card"><i class="fas fa-terminal"></i> Linux (Shell Scripting)</div>
+            <div class="skill-card"><i class="fab fa-docker"></i> Docker</div>
+            <div class="skill-card"><i class="fas fa-link"></i> JDBC/ODBC/TDV</div>
+            <div class="skill-card"><i class="fas fa-cloud"></i> Azure Data Factory</div>
+            <div class="skill-card"><i class="fab fa-microsoft"></i> Azure</div>
+          </div>
         </div>
-    </section>
-
-    <!-- EXPERIENCE TIMELINE -->
-    <section class="experience section-card" id="experience">
-        <h2>Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>Associate Consultant, Capgemini</h3>
-                    <span class="exp-date">Feb 2024 - Present | Bengaluru</span>
-                    <ul>
-                        <li>Managed over 100 production deployments, including 30 major, 50 regular enhancements, and several ad hoc deployments, ensuring consistency and reliability.</li>
-                        <li>Enhanced SQL procedures for regulatory reporting (EBA, ECB, PRA, SMA) by implementing complex logic to meet compliance needs.</li>
-                        <li>Improved and optimized ETL workflows by incorporating user feedback and evolving business requirements.</li>
-                        <li>Built and refined data engineering processes from scratch to address challenges and meet organizational objectives.</li>
-                        <li>Spearheaded key data migration projects, completing a 1-year project in 8 months with zero downtime using Informatica and PySpark.</li>
-                        <li>Automated and modernized legacy processes and workflows using Python, SQL, PySpark, and Informatica.</li>
-                        <li>Developed and maintained shell scripts for automating DB2 database object permissions, data migration, and loading processes.</li>
-                        <li>Collaborated with multi-functional teams to provide JDBC, ODBC, and TDV database connections for seamless data access.</li>
-                        <li>Performed production deployment and data testing, ensuring error-free releases and high-quality data availability for business-critical operations.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>Senior Software Engineer, Capgemini</h3>
-                    <span class="exp-date">Oct 2022 - Jan 2024 | Bengaluru</span>
-                    <ul>
-                        <li>Designed and developed ETL pipelines using Informatica PowerCenter, Python (Pandas), and PySpark to integrate and load data from diverse sources (XSD, CSV, APIs, and multiple databases) into the data warehouse.</li>
-                        <li>Developed and maintained ETL workflows, leveraging Informatica, PySpark, and Snowflake to enhance data processing efficiency by 30%.</li>
-                        <li>Streamlined data usage for multiple teams by organizing data into clean, structured, and consistently available formats for BI tools such as Tableau, Power BI, and Cognos.</li>
-                        <li>Created Python scripts using Pandas to reconcile and validate data between different sources, ensuring data integrity across migrations and loads.</li>
-                        <li>Automated Informatica workflow execution and monitoring, and developed shell scripts to fetch source files, load data into target tables, and automate database operations.</li>
-                        <li>Optimized performance and ensured seamless data management, showcasing advanced proficiency in modern data engineering practices.</li>
-                        <li>Demonstrated problem-solving skills by building processes from scratch and refining existing frameworks to address challenges and meet organizational objectives.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="projects section-card" id="projects">
-        <h2>Projects & Tools</h2>
-        <div class="projects-list">
-            <div class="projects-grid">
-                <div class="project-card collapsible">
-                    <button class="project-toggle">
-                        <span>Database Monitoring Tool</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details">
-                        <p>
-                            Developed a robust tool for real-time monitoring of database health, performance, and ETL job status. Features alerting, dashboards, and automated reporting.
-                        </p>
-                        <div class="project-tags">
-                            <span>Pandas</span>
-                            <span>Python</span>
-                            <span>SQL</span>
-                            <span>Automation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card collapsible">
-                    <button class="project-toggle">
-                        <span>ETL Pipeline Builder</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details">
-                        <p>
-                            Built a flexible ETL tool using Pandas to create pipelines for loading data between various sources (databases, files, APIs). Supports transformations, scheduling, and error handling.
-                        </p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>PySpark</span>
-                            <span>Pandas</span>
-                            <span>ETL</span>
-                            <span>Automation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card collapsible">
-                    <button class="project-toggle">
-                        <span>Informatica Workflow Automation</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details">
-                        <p>
-                            Designed and implemented numerous Informatica workflows for diverse business requirements, automated execution and monitoring using shell scripts.
-                        </p>
-                        <div class="project-tags">
-                            <span>Informatica</span>
-                            <span>Shell Scripting</span>
-                            <span>ETL</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card collapsible">
-                    <button class="project-toggle">
-                        <span>Data Reconciliation Script</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details">
-                        <p>
-                            Created a Python script leveraging Pandas to reconcile and validate data between different sources, ensuring data integrity across migrations and loads.
-                        </p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Pandas</span>
-                            <span>Data Quality</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card collapsible">
-                    <button class="project-toggle">
-                        <span>DB2 Database Automation Scripts</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details">
-                        <p>
-                            Developed shell scripts to automate DB2 database object permissions, data migration, and loading processes, including fetching and integrating source files into target tables.
-                        </p>
-                        <div class="project-tags">
-                            <span>Shell Scripting</span>
-                            <span>DB2</span>
-                            <span>SQL</span>
-                            <span>Automation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CODING PROFILES SECTION -->
-    <section class="coding-profiles section-card" id="coding-profiles">
-        <h2>Coding Profiles</h2>
-        <div class="profiles-grid">
-            <div class="profile-item">
-                <a href="https://github.com/Rakesh-b21" target="_blank" title="GitHub">
-                    <img src="images/github.svg" alt="GitHub" class="profile-icon">
-                </a>
-                <p>GitHub</p>
-            </div>
-            <div class="profile-item">
-                <a href="https://leetcode.com/RakeshBk/" target="_blank" title="LeetCode">
-                    <img src="images/leetcode.svg" alt="LeetCode" class="profile-icon">
-                </a>
+        <div id="profiles" class="tab-panel">
+          <div class="profiles-grid unique-profiles-grid minimal-profiles">
+            <div class="profile-card">
+              <a href="https://leetcode.com/RakeshBk/" target="_blank" title="LeetCode" aria-label="LeetCode">
+                <img src="images/leetcode.svg" alt="LeetCode" class="profile-icon" loading="lazy">
                 <p>LeetCode</p>
+              </a>
             </div>
-            <div class="profile-item">
-                <a href="https://www.hackerrank.com/your_username" target="_blank" title="HackerRank">
-                    <img src="images/hackerrank.svg" alt="HackerRank" class="profile-icon">
-                </a>
+            <div class="profile-card">
+              <a href="https://www.hackerrank.com/crakeshb0" target="_blank" title="HackerRank" aria-label="HackerRank">
+                <img src="images/hackerrank.svg" alt="HackerRank" class="profile-icon" loading="lazy">
                 <p>HackerRank</p>
+              </a>
             </div>
-            <div class="profile-item">
-                <a href="https://www.hackerearth.com/@your_username" target="_blank" title="HackerEarth">
-                    <img src="images/hackerearth.svg" alt="HackerEarth" class="profile-icon">
-                </a>
+            <div class="profile-card">
+              <a href="https://www.hackerearth.com/@crakeshb0" target="_blank" title="HackerEarth" aria-label="HackerEarth">
+                <img src="images/hackerearth.svg" alt="HackerEarth" class="profile-icon" loading="lazy">
                 <p>HackerEarth</p>
+              </a>
+            </div>
+            <div class="profile-card">
+              <a href="https://github.com/rakesh-b21" target="_blank" title="GitHub" aria-label="GitHub">
+                <img src="images/github.svg" alt="GitHub" class="profile-icon" loading="lazy">
+                <p>GitHub</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="experience section-card scroll-reveal" id="experience" aria-label="Experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Associate Consultant, Capgemini</h3>
+                <span class="exp-date">Feb 2024 - Present | Bengaluru</span>
+                <ul>
+                  <li>Managed over 100 production deployments, including 30 major and 50 regular enhancements, demonstrating reliability and dedication to results.</li>
+                  <li>Enhanced SQL procedures for regulatory reporting (EBA, ECB, PRA, SMA) by implementing complex logic for compliance.</li>
+                  <li>Improved and optimized workflows by incorporating user feedback and evolving business requirements.</li>
+                  <li>Demonstrated problem-solving by building new processes and refining frameworks to meet organizational objectives.</li>
+                  <li>Spearheaded key data migration projects, completing a 1-year project in 8 months with zero downtime using Informatica and PySpark.</li>
+                  <li>Achieved efficiency gains by automating workflows and modernizing legacy processes using Python, SQL, PySpark, and Informatica.</li>
+                </ul>
             </div>
         </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Senior Software Engineer, Capgemini</h3>
+                <span class="exp-date">Oct 2022 - Jan 2024 | Bengaluru</span>
+                <ul>
+                  <li>Designed and developed ETL pipelines using Informatica PowerCenter, Python (pandas), and PySpark to integrate and load data from diverse sources (XSD, CSV, APIs, databases).</li>
+                  <li>Streamlined data usage for multiple teams by organizing data into clean, structured formats for BI tools (Tableau, Power BI, Cognos).</li>
+                  <li>Developed and maintained ETL workflows, enhancing data processing efficiency by 30% with Informatica and PySpark.</li>
+                  <li>Actively performed production deployment and data testing, ensuring error-free releases and high-quality data availability.</li>
+                  <li>Collaborated with multi-functional teams to provide JDBC, ODBC, and TDV database connections for seamless data access.</li>
+                </ul>
+            </div>
+        </div>
+      </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
-    <section class="certifications section-card" id="certifications">
-        <h2>Certifications</h2>
-        <div class="cert-badges">
-            <span class="cert-badge">AZ-900</span>
-            <span class="cert-badge">AZ-204</span>
-            <span class="cert-badge">Python Specialization</span>
-            <span class="cert-badge">TensorFlow</span>
-            <span class="cert-badge">Responsive Web Design</span>
-        </div>
+    <!-- Promotions & Achievements -->
+    <section class="section-card promotions-achievements scroll-reveal" id="promotions-achievements" aria-label="Promotions and Achievements">
+      <h2>Promotions & Achievements</h2>
+      <ul class="achievements-list">
+        <li><strong>Promotion:</strong> Promoted from Senior Software Engineer to Associate Consultant at Capgemini for leadership and technical excellence (2024).</li>
+        <li><strong>Project Delivery:</strong> Completed a 1-year data migration project in 8 months with zero downtime.</li>
+        <li><strong>Process Automation:</strong> Automated and modernized legacy processes, increasing efficiency and reliability.</li>
+        <li><strong>Recognition:</strong> Received the <em>Rising Star Award</em> at Capgemini.</li>
+        <li><strong>Certifications:</strong> Azure Fundamentals (AZ-900), OCEAN Python Practitioner, Tableau, SQL, and more.</li>
+      </ul>
     </section>
 
-    <!-- EDUCATION -->
-    <section class="education section-card" id="education">
-        <h2>Education</h2>
-        <div class="edu-card">
-            <strong>B.Tech in Electrical and Electronics Engineering</strong><br>
-            <span>REVA University, Bengaluru</span><br>
-            <span>Graduated: 2022</span> | <span>CGPA: 9.02</span>
+    <!-- Projects & Tools -->
+    <section class="section-card projects scroll-reveal" id="projects" aria-label="Projects and Tools">
+      <h2>Projects & Tools</h2>
+      <div class="projects-list">
+        <div class="projects-grid">
+          <div class="project-card collapsible">
+            <button class="project-toggle" aria-expanded="false">
+              <span>Database Monitoring Tool</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="project-details" style="display:none;">
+              <p>Developed a robust tool for real-time monitoring of database health and ETL job status.</p>
+              <div class="project-tags">
+                <span>Pandas</span>
+                <span>Python</span>
+                <span>SQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card collapsible">
+            <button class="project-toggle" aria-expanded="false">
+              <span>ETL Pipeline Builder</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="project-details" style="display:none;">
+              <p>
+                Built an ETL tool using Pandas for creating flexible pipelines and error handling.
+              </p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>PySpark</span>
+                <span>ETL</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card collapsible">
+            <button class="project-toggle" aria-expanded="false">
+              <span>Informatica Workflow Automation</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="project-details" style="display:none;">
+              <p>
+                Implemented Informatica workflows with shell scripts for automated execution.
+              </p>
+              <div class="project-tags">
+                <span>Informatica</span>
+                <span>Shell Scripting</span>
+                <span>ETL</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card collapsible">
+            <button class="project-toggle" aria-expanded="false">
+              <span>Data Reconciliation Script</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="project-details" style="display:none;">
+              <p>
+                Developed a Python script leveraging Pandas to ensure data integrity across sources.
+              </p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Data Quality</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card collapsible">
+            <button class="project-toggle" aria-expanded="false">
+              <span>DB2 Database Automation Scripts</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="project-details" style="display:none;">
+              <p>
+                Automated DB2 database operations using shell scripts and integrated source files.
+              </p>
+              <div class="project-tags">
+                <span>Shell Scripting</span>
+                <span>DB2</span>
+                <span>SQL</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- MORE ABOUT ME -->
-    <section class="more-about section-card" id="more-about">
-        <h2>More About Me</h2>
-        <div class="about-details">
-            <h3>Languages & Communication</h3>
-            <p>Fluent in English, Hindi, and Kannada.</p>
+    <!-- Certificates Gallery -->
+    <section class="section-card certificates-gallery scroll-reveal" id="certificates-gallery" aria-label="Certificates Gallery">
+      <h2>Certificates Gallery</h2>
+
+      <div class="cert-category-block">
+        <h3 class="cert-category">Coursera</h3>
+        <div class="cert-gallery-grid unique-cert-grid">
+          <!-- Coursera certificates -->
+          <div class="cert-gallery-item">
+            <img src="certificates/COURSERA_Configuring for Scala with IntelliJ IDEA.png" alt="Configuring for Scala with IntelliJ IDEA Certificate" loading="lazy">
+            <span class="cert-title">Configuring for Scala with IntelliJ IDEA</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/COURSERA_Data Analysis Using Pyspark.png" alt="Data Analysis Using PySpark Certificate" loading="lazy">
+            <span class="cert-title">Data Analysis Using PySpark</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/COURSERA_HTML.png" alt="HTML Certificate" loading="lazy">
+            <span class="cert-title">HTML</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/COURSERA_Introduction to TensorFlow for AI, ML and Deep learning.png" alt="TensorFlow Certificate" loading="lazy">
+            <span class="cert-title">Introduction to TensorFlow for AI, ML and Deep Learning</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/COURSERA_Python Data Structures.png" alt="Python Data Structures Certificate" loading="lazy">
+            <span class="cert-title">Python Data Structures</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/COURSERA_PYTHON_Programming for Everybody.png" alt="Programming for Everybody (Python) Certificate" loading="lazy">
+            <span class="cert-title">Programming for Everybody (Python)</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/COURSERA_Using Python to Access Web Data.png" alt="Using Python to Access Web Data" loading="lazy">
+            <span class="cert-title">Using Python to Access Web Data</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/COUSERA_Agile Software Development.png" alt="Agile Software Development Certificate" loading="lazy">
+            <span class="cert-title">Agile Software Development</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/COURSERA_Cleaning and Exploring Big Data using PySpark.png" alt="Cleaning and Exploring Big Data using PySpark Certificate" loading="lazy">
+            <span class="cert-title">Cleaning and Exploring Big Data using PySpark</span>
+          </div>
         </div>
-        <div class="about-details">
-            <h3>Other Interests</h3>
-            <p>Artificial Intelligence, Cricket, Music, and Creative Arts.</p>
+      </div>
+      <div class="cert-category-block">
+        <h3 class="cert-category">Udemy</h3>
+        <div class="cert-gallery-grid unique-cert-grid">
+          <!-- Udemy certificates -->
+          <div class="cert-gallery-item">
+            <img src="certificates/UDEMY_SQL.png" alt="SQL Certificate" loading="lazy">
+            <span class="cert-title">SQL</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/UDEMY_Tableau.png" alt="Tableau Certificate" loading="lazy">
+            <span class="cert-title">Tableau</span>
+          </div>
         </div>
+      </div>
+      <div class="cert-category-block">
+        <h3 class="cert-category">HackerRank</h3>
+        <div class="cert-gallery-grid unique-cert-grid">
+          <!-- HackerRank certificates -->
+          <div class="cert-gallery-item">
+            <img src="certificates/Hacker Rank PythonBasic.png" alt="Python Basic Certificate" loading="lazy">
+            <span class="cert-title">Python Basic</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/Hacker Rank Sql_Intermediate.png" alt="SQL Intermediate Certificate" loading="lazy">
+            <span class="cert-title">SQL Intermediate</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/Hacker Rank SqlBasic.png" alt="SQL Basic Certificate" loading="lazy">
+            <span class="cert-title">SQL Basic</span>
+          </div>
+        </div>
+      </div>
+      <div class="cert-category-block">
+        <h3 class="cert-category">Capgemini</h3>
+        <div class="cert-gallery-grid unique-cert-grid">
+          <!-- Capgemini certificates -->
+          <div class="cert-gallery-item">
+            <img src="certificates/Capgemini Rising Star Award.png" alt="Rising Star Award Certificate" loading="lazy">
+            <span class="cert-title">Rising Star Award</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/CAPGEMINI_OCEAN_CERTIFICATION_Python.png" alt="OCEAN Python Certificate" loading="lazy">
+            <span class="cert-title">OCEAN Python</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/CAPGEMINI_OCEAN_CERTIFICATION_Python_Practioner.png" alt="OCEAN Python Practitioner Certificate" loading="lazy">
+            <span class="cert-title">OCEAN Python Practitioner</span>
+          </div>
+          <div class="cert-gallery-item">
+            <img src="certificates/CAPGEMINI_OCEAN_CERTIFICATION_Tableau.png" alt="OCEAN Tableau Certificate" loading="lazy">
+            <span class="cert-title">OCEAN Tableau</span>
+          </div>
+        </div>
+      </div>
+      <div class="cert-category-block">
+        <h3 class="cert-category">Microsoft</h3>
+        <div class="cert-gallery-grid unique-cert-grid">
+          <!-- Microsoft certificates -->
+          <div class="cert-gallery-item">
+            <img src="certificates/MICROSOFT_AZ900.png" alt="Azure Fundamentals (AZ-900) Certificate" loading="lazy">
+            <span class="cert-title">Azure Fundamentals (AZ-900)</span>
+          </div>
+        </div>
+      </div>
+      <div class="cert-category-block">
+        <h3 class="cert-category">ISRO</h3>
+        <div class="cert-gallery-grid unique-cert-grid">
+          <!-- ISRO certificates -->
+          <div class="cert-gallery-item">
+            <img src="certificates/ISRO_Machine learning to Deep Learning.png" alt="Machine Learning to Deep Learning Certificate" loading="lazy">
+            <span class="cert-title">Machine Learning to Deep Learning</span>
+          </div>
+        </div>
+      </div>
+      <div class="cert-category-block">
+        <h3 class="cert-category">Ethical Byte</h3>
+        <div class="cert-gallery-grid unique-cert-grid">
+          <!-- Ethical Byte certificates -->
+          <div class="cert-gallery-item">
+            <img src="certificates/ETHICAL_BYTE_ROBOTICS WITH RASPBERRY PI.png" alt="Robotics with Raspberry Pi Certificate" loading="lazy">
+            <span class="cert-title">Robotics with Raspberry Pi</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- CHILL OUT -->
-    <section class="chillout section-card" id="chillout">
-        <h2>Place to Chill Out</h2>
-        <div class="chillout-card">
-            <h3>Take a Break!</h3>
-            <a href="snake-game.html" class="chillout-link">Go to Games</a>
+    <!-- Education -->
+    <section class="section-card education scroll-reveal" id="education" aria-label="Education">
+      <h2>Education</h2>
+      <div class="edu-timeline">
+        <div class="edu-item">
+          <div class="edu-content">
+            <h3>Bachelor of Technology in Electrical and Electronics Engineering</h3>
+            <div class="edu-school">REVA University, Bengaluru</div>
+            <div class="edu-meta">CGPA: 9.02/10</div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Rakesh B Choudhary</p>
-    </footer>
-    <script src="scripts/main.js"></script>
+    <!-- More About Me -->
+    <section class="section-card more-about scroll-reveal" id="more-about" aria-label="More About Me">
+      <h2>More About Me</h2>
+      <div class="more-cards minimal-more">
+        <div class="more-card glass-card">
+          <span class="more-icon-simple">A</span>
+          <div>
+            <h3>Languages</h3>
+            <p>English, Hindi, Kannada</p>
+          </div>
+        </div>
+        <div class="more-card glass-card">
+          <span class="more-icon-simple">♪</span>
+          <div>
+            <h3>Interests</h3>
+            <p>Music, Cricket, Creative Arts, AI</p>
+          </div>
+        </div>
+        <div class="more-card glass-card">
+          <span class="more-icon-simple">★</span>
+          <div>
+            <h3>Strengths</h3>
+            <p>Quick Learner, Team Player, Problem Solver</p>
+          </div>
+        </div>
+        <!-- Add more cards as you like -->
+      </div>
+    </section>
+
+    <!-- Chill Out -->
+    <section class="section-card chillout scroll-reveal" id="chillout" aria-label="Chill Out">
+      <h2>Chill Out</h2>
+      <div class="chillout-card">
+        <h3>Take a Break!</h3>
+        <a href="snake-game.html" class="chillout-link">Play Snake</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Rakesh B Choudhary</p>
+  </footer>
+
+  <!-- Lightbox for certificates -->
+  <div id="lightbox" class="lightbox" style="display:none;">
+    <span class="close" aria-label="Close" tabindex="0">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Certificate enlarged view" src="" />
+  </div>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>

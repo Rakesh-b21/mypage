@@ -82,11 +82,22 @@ canvas {
 
 /* Responsive Canvas */
 @media (max-width: 600px) {
-    canvas {
-        max-width: 98vw;
-        max-height: 60vw;
-        border-radius: 0;
-    }
+  canvas {
+    max-width: 98vw;
+    max-height: 60vw;
+    border-radius: 0;
+  }
+  #pauseOverlay button {
+    font-size: 1em;
+    padding: 10px 0;
+    width: 90vw;
+    max-width: 95vw;
+  }
+  #touchControls button {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3em;
+  }
 }
 
 /* Score Display */
