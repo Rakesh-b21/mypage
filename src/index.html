@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio of Rakesh B Choudhary, Data Engineer and Software Developer specializing in ETL, Azure, and modern data solutions.">
+  <meta name="keywords" content="Data Engineer, Software Developer, ETL, Azure, Python, PySpark, Databricks, Azure Functions, Cosmos DB, Portfolio">
+  <meta name="author" content="Rakesh B Choudhary">
+  <meta name="theme-color" content="#0078D7">
   <title>Rakesh B Choudhary - Portfolio</title>
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/navbar.css">
   <link rel="stylesheet" href="styles/sections.css">
@@ -36,15 +44,15 @@
     <!-- Hero Section -->
     <section class="hero scroll-reveal" id="hero" aria-label="Hero">
       <div class="hero-photo">
-        <img src="images/profilepic2.webp" alt="Profile Photo" loading="lazy">
+        <img src="images/profilepic2.webp" alt="Professional headshot of Rakesh B Choudhary, Data Engineer and Software Developer" loading="lazy" width="150" height="150">
       </div>
       <div class="hero-content">
         <h1>Rakesh B Choudhary</h1>
-        <p class="tagline">Data Engineer | Software Developer</p>
+        <p class="tagline" role="doc-subtitle">Data Engineer | Software Developer</p>
         <div class="hero-social">
-          <a href="#skills-coding-tabs" title="Skills & Coding Profiles" aria-label="Skills & Coding Profiles"><i class="fas fa-code"></i></a>
-          <a href="mailto:crakeshb0@gmail.com" title="Gmail" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
-          <a href="https://linkedin.com/in/rakesh-b-choudhary-293722201" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#skills-coding-tabs" title="View my technical skills and coding profiles" aria-label="Navigate to skills section"><i class="fas fa-code" aria-hidden="true"></i><span class="sr-only">Skills</span></a>
+          <a href="mailto:rakesh.bk.choudhary@gmail.com" title="Send me an email" aria-label="Contact via email"><i class="fas fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span></a>
+          <a href="https://linkedin.com/in/rakesh-b-choudhary-293722201" target="_blank" rel="noopener noreferrer" title="Connect with me on LinkedIn" aria-label="Visit my LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
         </div>
       </div>
     </section>
@@ -53,7 +61,7 @@
     <section class="about section-card scroll-reveal" id="about" aria-label="About Me">
       <h2>About Me</h2>
       <p>
-        Results-driven software engineer with around 3 years of experience in ETL development and data engineering. Adept at designing and optimizing scalable ETL pipelines. Strong problem-solving skills and a commitment to innovation, with a track record of delivering high impact solutions in fast-paced environments. Promoted from Senior Software Engineer to Associate Consultant for leadership, technical excellence, and the ability to navigate complex challenges in data-driven projects.
+        Data Engineer with 3+ years of hands-on experience building reliable data pipelines and modernizing legacy workflows. Strong in Python, SQL, PySpark, and Azure (Functions, Databricks, Cosmos DB). I focus on performance, automation, and audit-ready delivery across finance and risk domains. Currently an Associate Consultant at Capgemini, recognized for accelerating migrations and improving operational efficiency.
       </p>
     </section>
 
@@ -71,22 +79,43 @@
       </div>
       <div class="tab-content">
         <div id="skills" class="tab-panel active">
-          <div class="skills-grid unique-skills-grid minimal-skills">
-            <div class="skill-card"><i class="fas fa-project-diagram"></i> ETL Development</div>
-            <div class="skill-card"><i class="fas fa-database"></i> Data Engineering</div>
-            <div class="skill-card"><i class="fas fa-code"></i> Python</div>
-            <div class="skill-card"><i class="fas fa-coffee"></i> Java</div>
-            <div class="skill-card"><i class="fas fa-bolt"></i> PySpark</div>
-            <div class="skill-card"><i class="fas fa-database"></i> SQL</div>
-            <div class="skill-card"><i class="fas fa-cogs"></i> Informatica PowerCenter</div>
-            <div class="skill-card"><i class="fas fa-table"></i> Regulatory Reporting</div>
-            <div class="skill-card"><i class="fas fa-chart-bar"></i> Power BI</div>
-            <div class="skill-card"><i class="fas fa-chart-pie"></i> Tableau</div>
-            <div class="skill-card"><i class="fas fa-terminal"></i> Linux (Shell Scripting)</div>
-            <div class="skill-card"><i class="fab fa-docker"></i> Docker</div>
-            <div class="skill-card"><i class="fas fa-link"></i> JDBC/ODBC/TDV</div>
-            <div class="skill-card"><i class="fas fa-cloud"></i> Azure Data Factory</div>
-            <div class="skill-card"><i class="fab fa-microsoft"></i> Azure</div>
+          <div class="skills-groups">
+            <div class="skills-group">
+              <h3>Azure & Cloud</h3>
+              <ul class="skills-list">
+                <li class="skill-chip"><i class="fab fa-microsoft" aria-hidden="true"></i> Azure</li>
+                <li class="skill-chip"><i class="fas fa-bolt" aria-hidden="true"></i> Azure Functions</li>
+                <li class="skill-chip"><i class="fas fa-database" aria-hidden="true"></i> Azure Cosmos DB</li>
+                <li class="skill-chip"><i class="fas fa-chart-line" aria-hidden="true"></i> Databricks</li>
+              </ul>
+            </div>
+            <div class="skills-group">
+              <h3>Core</h3>
+              <ul class="skills-list">
+                <li class="skill-chip"><i class="fab fa-python" aria-hidden="true"></i> Python</li>
+                <li class="skill-chip"><i class="fas fa-fire" aria-hidden="true"></i> PySpark</li>
+                <li class="skill-chip"><i class="fas fa-database" aria-hidden="true"></i> SQL</li>
+                <li class="skill-chip"><i class="fas fa-cogs" aria-hidden="true"></i> Informatica</li>
+              </ul>
+            </div>
+            <div class="skills-group">
+              <h3>Data & Messaging</h3>
+              <ul class="skills-list">
+                <li class="skill-chip"><i class="fas fa-stream" aria-hidden="true"></i> Kafka</li>
+                <li class="skill-chip"><i class="fab fa-docker" aria-hidden="true"></i> Docker</li>
+                <li class="skill-chip"><i class="fas fa-tools" aria-hidden="true"></i> Jenkins (CI/CD)</li>
+                <li class="skill-chip"><i class="fas fa-clock" aria-hidden="true"></i> Autosys</li>
+              </ul>
+            </div>
+            <div class="skills-group">
+              <h3>Other</h3>
+              <ul class="skills-list">
+                <li class="skill-chip"><i class="fab fa-linux" aria-hidden="true"></i> Linux</li>
+                <li class="skill-chip"><i class="fab fa-git-alt" aria-hidden="true"></i> Git/Bitbucket</li>
+                <li class="skill-chip"><i class="fab fa-java" aria-hidden="true"></i> Java</li>
+                <li class="skill-chip"><i class="fas fa-chart-bar" aria-hidden="true"></i> Tableau</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div id="profiles" class="tab-panel">
@@ -127,29 +156,34 @@
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Associate Consultant, Capgemini</h3>
-                <span class="exp-date">Feb 2024 - Present | Bengaluru</span>
+                <h3>Data Engineer (Associate Consultant)</h3>
+                <div class="company-info">
+                  <span class="company">Capgemini | Project for Morgan Stanley</span>
+                  <span class="exp-date">Feb 2024 - Present | Bengaluru</span>
+                </div>
+                <p class="role-summary">Promoted for outstanding contributions in ETL development, application migration, and delivery on high-impact finance and operational risk initiatives.</p>
                 <ul>
-                  <li>Managed over 100 production deployments, including 30 major and 50 regular enhancements, demonstrating reliability and dedication to results.</li>
-                  <li>Enhanced SQL procedures for regulatory reporting (EBA, ECB, PRA, SMA) by implementing complex logic for compliance.</li>
-                  <li>Improved and optimized workflows by incorporating user feedback and evolving business requirements.</li>
-                  <li>Demonstrated problem-solving by building new processes and refining frameworks to meet organizational objectives.</li>
-                  <li>Spearheaded key data migration projects, completing a 1-year project in 8 months with zero downtime using Informatica and PySpark.</li>
-                  <li>Achieved efficiency gains by automating workflows and modernizing legacy processes using Python, SQL, PySpark, and Informatica.</li>
+                  <li><strong>Automated Data Processing:</strong> Developed automated Python scripts for file ingestion, mapping over 50+ financial and risk-related data files weekly. Reduced manual effort by 100% and enabled real-time reporting for key stakeholders.</li>
+                  <li><strong>Performance Optimization:</strong> Optimized core SQL and ETL processes, delivering 70% better performance through advanced join strategies, batch processing, dynamic partitioning, and index management.</li>
+                  <li><strong>Migration Leadership:</strong> Played a major role in data warehouse migration project for finance/risk domains, completing in 6 months (vs. 12 estimated), accelerating project ROI and audit-readiness.</li>
+                  <li><strong>Monitoring Solutions:</strong> Designed a DB monitoring tool (Flask, Docker), enabling rapid detection of anomalies and long-running queries with a 40% reduction in incident resolution times.</li>
                 </ul>
             </div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Senior Software Engineer, Capgemini</h3>
-                <span class="exp-date">Oct 2022 - Jan 2024 | Bengaluru</span>
+                <h3>Data Engineer (Senior Software Engineer)</h3>
+                <div class="company-info">
+                  <span class="company">Capgemini | Project for Morgan Stanley</span>
+                  <span class="exp-date">Oct 2022 - Jan 2024 | Bengaluru</span>
+                </div>
                 <ul>
-                  <li>Designed and developed ETL pipelines using Informatica PowerCenter, Python (pandas), and PySpark to integrate and load data from diverse sources (XSD, CSV, APIs, databases).</li>
-                  <li>Streamlined data usage for multiple teams by organizing data into clean, structured formats for BI tools (Tableau, Power BI, Cognos).</li>
-                  <li>Developed and maintained ETL workflows, enhancing data processing efficiency by 30% with Informatica and PySpark.</li>
-                  <li>Actively performed production deployment and data testing, ensuring error-free releases and high-quality data availability.</li>
-                  <li>Collaborated with multi-functional teams to provide JDBC, ODBC, and TDV database connections for seamless data access.</li>
+                  <li><strong>ETL Development:</strong> Built and enhanced Informatica mappings and workflows for ingesting data from CSV, XML, PostgreSQL, MySQL, and DB2 - especially for regulated risk data.</li>
+                  <li><strong>Data Transformations:</strong> Leveraged advanced data transformations including cleaning, aggregation, calculated fields, parent-child relationships, and reshaping to support financial risk metrics.</li>
+                  <li><strong>Deployment Automation:</strong> Automated end-to-end DWH deployment, cutting human errors and saving 90% of developer effort, directly impacting operational risk reporting cycles.</li>
+                  <li><strong>Pipeline Development:</strong> Developed modular ETL pipelines using Pandas, NumPy, and OIDC secured APIs for trusted data acquisition with rigorous error handling and transparent logging.</li>
+                  <li><strong>Security & Access Control:</strong> Built access control automation for audit, enabling secure grants management via database control tables.</li>
                 </ul>
             </div>
         </div>
@@ -160,18 +194,82 @@
     <section class="section-card promotions-achievements scroll-reveal" id="promotions-achievements" aria-label="Promotions and Achievements">
       <h2>Promotions & Achievements</h2>
       <ul class="achievements-list">
-        <li><strong>Promotion:</strong> Promoted from Senior Software Engineer to Associate Consultant at Capgemini for leadership and technical excellence (2024).</li>
-        <li><strong>Project Delivery:</strong> Completed a 1-year data migration project in 8 months with zero downtime.</li>
-        <li><strong>Process Automation:</strong> Automated and modernized legacy processes, increasing efficiency and reliability.</li>
-        <li><strong>Recognition:</strong> Received the <em>Rising Star Award</em> at Capgemini.</li>
-        <li><strong>Certifications:</strong> Azure Fundamentals (AZ-900), OCEAN Python Practitioner, Tableau, SQL, and more.</li>
+        <li><strong>Role Growth:</strong> Advanced to Associate Consultant (2024) for impact across automation and migration initiatives.</li>
+        <li><strong>Migration Impact:</strong> Accelerated platform migration with zero downtime and improved audit readiness.</li>
+        <li><strong>Ops Efficiency:</strong> Introduced monitoring and CI/CD practices that reduced incident time-to-recovery.</li>
+        <li><strong>Awards:</strong> <em>Rising Star Award</em> at Capgemini.</li>
+        <li><strong>Certifications:</strong> AZ-900 (Azure), OCEAN Python Practitioner, Tableau, SQL.</li>
       </ul>
     </section>
 
     <!-- Projects & Tools -->
     <section class="section-card projects scroll-reveal" id="projects" aria-label="Projects and Tools">
-      <h2>Projects & Tools</h2>
-      <div class="projects-list">
+      <h2>Personal Projects</h2>
+      
+      <!-- Featured GitHub Projects -->
+      <div class="featured-projects">
+        <div class="project-card featured" data-link="https://github.com/Rakesh-b21/real-time-stock-market-data-pipeline" tabindex="0" role="link" aria-label="Open Real-time Stock Market Data Pipeline on GitHub">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="project-title">
+              <h3>Real-time Stock Market Data Pipeline</h3>
+              <p class="project-subtitle">Advanced data streaming and analytics platform</p>
+            </div>
+            <a href="https://github.com/Rakesh-b21/real-time-stock-market-data-pipeline" target="_blank" class="github-link" aria-label="View project on GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="project-content">
+            <p>Real-time pipeline to fetch, stream, and store market data. Python producer + Kafka for reliable, scalable ingestion.</p>
+            <div class="project-highlights">
+              <span class="highlight">• Kafka streaming</span>
+              <span class="highlight">• Dynamic tickers</span>
+            </div>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Apache Kafka</span>
+              <span>Yahoo Finance API</span>
+              <span>Real-time Analytics</span>
+              <span>Data Streaming</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card featured" data-link="https://github.com/Rakesh-b21/agri_data_pipeline" tabindex="0" role="link" aria-label="Open Agriculture Data Pipeline on GitHub">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <div class="project-title">
+              <h3>Agriculture Data Pipeline</h3>
+              <p class="project-subtitle">Smart farming analytics and insights platform</p>
+            </div>
+            <a href="https://github.com/Rakesh-b21/agri_data_pipeline" target="_blank" class="github-link" aria-label="View project on GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="project-content">
+            <p>End-to-end pipeline for farm analytics using sensor and weather data to drive insights and reporting.</p>
+            <div class="project-highlights">
+              <span class="highlight">• IoT ingestion</span>
+              <span class="highlight">• Predictive analytics</span>
+            </div>
+            <div class="project-tags">
+              <span>PySpark</span>
+              <span>Azure Cosmos DB</span>
+              <span>Machine Learning</span>
+              <span>Tableau</span>
+              <span>IoT Analytics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Projects -->
+      <div class="additional-projects">
+        <h3 class="section-subtitle">Other Projects (Professional)</h3>
         <div class="projects-grid">
           <div class="project-card collapsible">
             <button class="project-toggle" aria-expanded="false">
@@ -179,11 +277,12 @@
               <i class="fas fa-chevron-down"></i>
             </button>
             <div class="project-details" style="display:none;">
-              <p>Developed a robust tool for real-time monitoring of database health and ETL job status.</p>
+              <p>Real-time DB and ETL health monitoring with alerts and dashboards.</p>
               <div class="project-tags">
-                <span>Pandas</span>
                 <span>Python</span>
+                <span>Pandas</span>
                 <span>SQL</span>
+                <span>Monitoring</span>
               </div>
             </div>
           </div>
@@ -193,13 +292,12 @@
               <i class="fas fa-chevron-down"></i>
             </button>
             <div class="project-details" style="display:none;">
-              <p>
-                Built an ETL tool using Pandas for creating flexible pipelines and error handling.
-              </p>
+              <p>Reusable ETL framework (Pandas, PySpark) with strong logging and error handling.</p>
               <div class="project-tags">
                 <span>Python</span>
                 <span>PySpark</span>
                 <span>ETL</span>
+                <span>Data Processing</span>
               </div>
             </div>
           </div>
@@ -209,45 +307,27 @@
               <i class="fas fa-chevron-down"></i>
             </button>
             <div class="project-details" style="display:none;">
-              <p>
-                Implemented Informatica workflows with shell scripts for automated execution.
-              </p>
+              <p>Automated Informatica deployments and executions using shell scripts.</p>
               <div class="project-tags">
                 <span>Informatica</span>
                 <span>Shell Scripting</span>
                 <span>ETL</span>
+                <span>Automation</span>
               </div>
             </div>
           </div>
           <div class="project-card collapsible">
             <button class="project-toggle" aria-expanded="false">
-              <span>Data Reconciliation Script</span>
+              <span>Data Reconciliation Framework</span>
               <i class="fas fa-chevron-down"></i>
             </button>
             <div class="project-details" style="display:none;">
-              <p>
-                Developed a Python script leveraging Pandas to ensure data integrity across sources.
-              </p>
+              <p>Python framework (Pandas) for cross-source data integrity checks.</p>
               <div class="project-tags">
                 <span>Python</span>
                 <span>Pandas</span>
                 <span>Data Quality</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-card collapsible">
-            <button class="project-toggle" aria-expanded="false">
-              <span>DB2 Database Automation Scripts</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="project-details" style="display:none;">
-              <p>
-                Automated DB2 database operations using shell scripts and integrated source files.
-              </p>
-              <div class="project-tags">
-                <span>Shell Scripting</span>
-                <span>DB2</span>
-                <span>SQL</span>
+                <span>Validation</span>
               </div>
             </div>
           </div>
@@ -392,10 +472,16 @@
       <h2>Education</h2>
       <div class="edu-timeline">
         <div class="edu-item">
+          <div class="edu-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
           <div class="edu-content">
-            <h3>Bachelor of Technology in Electrical and Electronics Engineering</h3>
-            <div class="edu-school">REVA University, Bengaluru</div>
-            <div class="edu-meta">CGPA: 9.02/10</div>
+            <div class="edu-header">
+              <h3>Bachelor of Technology (EEE)</h3>
+              <div class="edu-cgpa-badge">CGPA: 9.02</div>
+            </div>
+            <div class="edu-school">REVA University, Bengaluru · 2018–2022</div>
+            <div class="edu-meta"><span class="edu-field sr-only">Electrical and Electronics Engineering</span></div>
           </div>
         </div>
       </div>
@@ -406,14 +492,14 @@
       <h2>More About Me</h2>
       <div class="more-cards minimal-more">
         <div class="more-card glass-card">
-          <span class="more-icon-simple">A</span>
+          <span class="more-icon-simple"><i class="fas fa-language"></i></span>
           <div>
             <h3>Languages</h3>
-            <p>English, Hindi, Kannada</p>
+            <p>English, Hindi, Kannada (Professional)</p>
           </div>
         </div>
         <div class="more-card glass-card">
-          <span class="more-icon-simple">♪</span>
+          <span class="more-icon-simple"><i class="fas fa-heart"></i></span>
           <div>
             <h3>Interests</h3>
             <p>Music, Cricket, Creative Arts, AI</p>
@@ -423,7 +509,7 @@
           <span class="more-icon-simple">★</span>
           <div>
             <h3>Strengths</h3>
-            <p>Quick Learner, Team Player, Problem Solver</p>
+            <p>Fast learner, Team player, Problem solver</p>
           </div>
         </div>
         <!-- Add more cards as you like -->
