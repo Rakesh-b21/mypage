@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/snake-game.css">
+</head>
+<body>
+    <div id="homeScreen" class="screen">
+        <!-- Animated Title -->
+        <div class="snake-title">
+            <div class="snake-border-animation-wrapper">
+                <svg class="snake-animation-svg" width="400" height="120" viewBox="0 0 400 120">
+                    <path id="snakeBorderPath"
+                          d="M60,40 Q60,20 80,20 H320 Q340,20 340,40 V80 Q340,100 320,100 H80 Q60,100 60,80 Z"
+                          fill="none" stroke="#00C6A7" stroke-width="4"/>
+                    <circle r="8" fill="#0078D7">
+                        <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
+                            <mpath href="#snakeBorderPath"/>
+                        </animateMotion>
+                    </circle>
+                    <text x="200" y="85" text-anchor="middle" font-size="2.2em"
+                          font-family="Segoe UI, Arial, sans-serif" fill="#0078D7" font-weight="bold"
+                          dominant-baseline="middle">
+                        Snake Game
+                    </text>
+                </svg>
+            </div>
+        </div>
+        <!-- Controls and tip below -->
+        <div class="controls-group">
+            <label for="difficulty">Select Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button id="startGameButton">Start Game</button>
+        </div>
+        <div class="game-tip">
+            <span>Tip: Tap the canvas to pause. Use on-screen arrows on mobile!</span>
+        </div>
+    </div>
+    <div id="gameScreen" class="screen hidden">
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <div id="pauseOverlay" class="hidden">
+                <button id="resumeButton">Resume</button>
+                <button id="exitButton">Exit</button>
+            </div>
+        </div>
+        <div id="scoreDisplay">Score: 0</div>
+        <div id="touchControls">
+            <button id="upBtn" aria-label="Up">▲</button>
+            <div>
+                <button id="leftBtn" aria-label="Left">◀</button>
+                <button id="downBtn" aria-label="Down">▼</button>
+                <button id="rightBtn" aria-label="Right">▶</button>
+            </div>
+        </div>
+    </div>
+    <footer class="snake-footer">
+        <p>&copy; 2025 Rakesh B Choudhary &mdash; <a href="index.html">Back to Portfolio</a></p>
+    </footer>
+    <script src="scripts/snake-game.js"></script>
+</body>
+</html>
