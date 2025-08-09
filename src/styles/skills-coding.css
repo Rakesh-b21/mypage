@@ -1,29 +1,29 @@
 /* --- Professional, Simple, Button-like Tab Cards & Container --- */
 .tab-cards-container {
-  background: transparent !important;
-  box-shadow: none !important;
-  padding: 0.25rem 0.25rem;
-  margin-bottom: 2rem;
+  background: transparent;
+  box-shadow: none;
+  padding: var(--space-1) var(--space-1);
+  margin-bottom: var(--space-8);
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 1.2rem;
+  gap: var(--space-5);
 }
 .tab-card {
-  background: #fff;
-  border: 2.5px solid #d1e3f8;
-  border-radius: 1.2rem 1.2rem 0 0;
-  padding: 0.7rem 2.5rem;
-  font-size: 1.13rem;
-  color: #1976d2;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: var(--space-3) var(--space-8);
+  font-size: var(--font-size-lg);
+  color: var(--text-color);
   font-weight: 700;
   letter-spacing: 0.01em;
   display: flex;
   align-items: center;
-  gap: 1.1rem; /* Increased spacing between icon and text */
+  gap: var(--space-4);
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(25,118,210,0.08);
-  transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s, transform 0.13s;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast), border var(--transition-fast), transform var(--transition-fast);
   outline: none;
   min-width: 120px;
   justify-content: center;
@@ -33,36 +33,36 @@
   z-index: 3;
 }
 .tab-card.active, .tab-card:focus {
-  background: #1976d2;
+  background: var(--primary);
   color: #fff;
-  border-color: #1976d2;
-  box-shadow: 0 6px 24px rgba(25,118,210,0.18);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
   transform: scale(1.13) translateY(2px);
   z-index: 4;
 }
 .tab-card:hover:not(.active) {
-  background: #f0f7ff;
-  color: #1565c0;
-  border-color: #90caf9;
+  background: var(--background-alt);
+  color: var(--text-color);
+  border-color: var(--border);
 }
 .tab-card:active {
-  background: #e3f2fd;
-  color: #1976d2;
+  background: var(--background-alt);
+  color: #fff;
 }
 .tab-card i {
-  font-size: 1.35rem; /* Slightly larger icon */
-  margin-right: 0.2rem;
+  font-size: var(--font-size-xl);
+  margin-right: var(--space-1);
   color: inherit;
 }
 .tab-card:focus-visible {
-  outline: 2.5px solid #1976d2;
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
 .tab-content {
-  background: transparent !important;
-  box-shadow: none !important;
-  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  background: transparent;
+  box-shadow: none;
+  padding: var(--space-8) var(--space-6) var(--space-6) var(--space-6);
   margin-top: -2px;
   position: relative;
   z-index: 1;
@@ -71,116 +71,49 @@
 .tab-panel.active { display: block; }
 
 /* --- Unified Card Style for All Sections --- */
-.section-card,
-.promotions-achievements,
-.timeline-content,
-.more-card,
-.edu-content,
-.cert-gallery-item,
-.project-card,
-.skill-card,
-.profile-card {
-  position: relative;
-  overflow: hidden;
-}
-.section-card::before, .skills-coding-section::before, .promotions-achievements::before, .timeline-content::before, .more-card::before, .edu-content::before, .cert-gallery-item::before, .project-card::before, .profile-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="400" height="200" fill="none"/><g opacity="0.08"><circle cx="60" cy="60" r="40" stroke="%23fff" stroke-width="2"/><rect x="300" y="120" width="60" height="60" rx="12" stroke="%23fff" stroke-width="2"/><polygon points="200,40 220,80 180,80" stroke="%23fff" stroke-width="2" fill="none"/></g></svg>') center/cover no-repeat;
-  animation: bg-move 18s linear infinite alternate;
-}
-@keyframes bg-move {
-  0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(-10px) scale(1.02); }
-}
-
-/* Ensure content is above the background overlay */
-.section-card > *,
-.skills-coding-section > *,
-.promotions-achievements > *,
-.timeline-content > *,
-.more-card > *,
-.edu-content > *,
-.cert-gallery-item > *,
-.project-card > *,
-.profile-card > * {
-  position: relative;
-  z-index: 1;
-}
+/* Removed decorative overlays for minimal design */
 
 /* Minimal, elegant tweaks for elegance and clarity */
-.section-card, .skills-coding-section {
-  box-shadow: 0 4px 16px rgba(0,120,215,0.08), 0 1.5px 6px rgba(0,0,0,0.03) inset;
-  border-radius: 1.2rem;
-  border: 1.5px solid #e3eaf3;
-  background: #fff;
-}
+/* Section wrappers inherit tokens from sections.css */
 
 /* Subtle section spacing */
 .section-card, .skills-coding-section {
-  margin-bottom: 2.2rem;
-  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  margin-bottom: var(--space-8);
+  padding: var(--space-8) var(--space-6) var(--space-6) var(--space-6);
 }
 
 /* Headings: more minimal, modern */
-.section-card > h2, .skills-coding-section > h2 {
-  font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', monospace;
-  font-weight: 600;
-  font-size: 1.45rem;
-  letter-spacing: 0.01em;
-  color: #1976d2;
-  margin-bottom: 1.2rem;
-  background: none;
-  border: none;
-}
+/* Headings unified in base.css/sections.css */
 
 /* Remove heavy borders and backgrounds from cards for minimal look */
-.timeline-content, .more-card, .edu-content, .cert-gallery-item, .project-card, .skill-card, .profile-card {
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
+/* Cards keep token-based styles defined in components.css and sections.css */
 
 /* Card hover: only a soft shadow and slight lift */
 .timeline-content:hover, .more-card:hover, .edu-content:hover, .cert-gallery-item:hover, .project-card:hover, .skill-card:hover, .profile-card:hover {
-  box-shadow: 0 8px 24px rgba(0,120,215,0.10), 0 1.5px 6px rgba(0,198,167,0.08) inset !important;
-  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
 /* Cert-category: even more minimal, less background, more accent */
-.cert-category {
-  font-size: 1.13rem;
-  font-weight: 700;
-  color: #1976d2;
-  margin: 2.2rem 0 1.1rem 0;
-  letter-spacing: 0.01em;
-  padding-left: 0.5rem;
-  border-left: 4px solid #00C6A7;
-  background: none;
-  border-radius: 0.5rem;
-  box-shadow: none;
-  display: inline-block;
-}
+/* Cert-category styles live in sections/certificates files */
 
 /* --- Coding Profiles Grid & Icon Modernization --- */
 .profiles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
-  gap: 1.1rem;
+  gap: var(--space-4);
   width: 100%;
-  margin: 0 auto 2.2rem auto;
+  margin: 0 auto var(--space-8) auto;
   justify-content: center;
 }
 .profile-card {
-  background: #fff;
-  border-radius: 1.1rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-  transition: box-shadow 0.18s, border 0.18s, transform 0.18s;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition-fast), border var(--transition-fast), transform var(--transition-fast);
   min-width: 0;
-  padding: 0.7rem 0.7rem;
+  padding: var(--space-3) var(--space-3);
   display: block;
   width: max-content;
   margin: 0 auto;
@@ -203,21 +136,21 @@
   object-fit: contain;
   display: block;
   margin: 0 auto 0.15rem auto;
-  border-radius: 0.5rem;
-  background: transparent;
-  box-shadow: 0 2px 8px rgba(25,118,210,0.07);
-  transition: box-shadow 0.18s, transform 0.18s, background 0.18s;
+  border-radius: var(--radius-md);
+  background: var(--background-alt);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
   font-size: 2rem;
 }
 .profile-card:hover .profile-icon,
 .profile-card:focus .profile-icon {
-  box-shadow: 0 6px 18px rgba(0,198,167,0.13);
-  background: rgba(0,198,167,0.07);
+  box-shadow: var(--shadow-md);
+  background: var(--background-alt);
   transform: scale(1.08) translateY(-2px);
 }
 .profile-card p {
-  font-size: 1.01rem;
-  color: #1976d2;
+  font-size: var(--font-size-base);
+  color: var(--text-color);
   margin: 0;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -226,10 +159,10 @@
 @media (max-width: 900px) {
   .profiles-grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
-    gap: 0.7rem;
+    gap: var(--space-2);
   }
   .profile-card {
-    padding: 0.5rem 0.5rem;
+    padding: var(--space-2) var(--space-2);
     width: max-content;
     margin: 0 auto;
   }
@@ -242,10 +175,10 @@
 @media (max-width: 600px) {
   .profiles-grid {
     grid-template-columns: repeat(2, minmax(90px, max-content));
-    gap: 0.3rem;
+    gap: var(--space-1);
   }
   .profile-card {
-    padding: 0.3rem 0.3rem;
+    padding: var(--space-1) var(--space-1);
     width: max-content;
     margin: 0 auto;
   }
@@ -323,10 +256,10 @@
 }
 
 .skill-card i {
-  font-size: 1.35rem;
-  margin-right: 1.2rem; /* More space after icon */
+  font-size: var(--font-size-xl);
+  margin-right: var(--space-4);
   flex-shrink: 0;
-  padding-left: 1.2rem; /* More space before icon */
+  padding-left: var(--space-4);
 }
 @media (max-width: 900px) {
   .skill-card i {
@@ -339,4 +272,53 @@
     padding-left: 0.5rem;
     margin-right: 0.5rem;
   }
+}
+
+/* --- Simple Skills Groups & Chips --- */
+.skills-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4) var(--space-5);
+}
+
+.skills-group h3 {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: 999px;
+  background: var(--background-alt);
+  color: var(--text-color);
+  border: 1px solid var(--border);
+  font-size: var(--font-size-sm);
+  line-height: 1;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.skill-chip i { color: var(--accent); }
+
+.skill-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .skills-groups { grid-template-columns: 1fr; }
 }
