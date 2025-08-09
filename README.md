@@ -1,64 +1,73 @@
-# Portfolio Website
+﻿# Rakesh B Choudhary — Portfolio
 
-This is a modern, responsive portfolio website project that showcases personal projects, skills, and coding profiles. It features a visually perfect dark mode, with special attention to the Skills & Coding Profiles section and education CGPA badge. Coding profile icons are optimized for both light and dark themes, ensuring brand visibility and vibrance.
+A modern, minimal, token-driven portfolio website. Fully responsive with light/dark themes, accessible, and optimized for GitHub Pages.
 
 ## Project Structure
+- src/index.html — main page
+- src/styles/ — modular CSS:
+  - base.css, navbar.css, sections.css, components.css, darkmode.css, certificates.css, skills-coding.css, snake-game.css
+- src/main.js, src/snake-game.js — interactivity and game
+- dist/ — built (minified) output for deployment
+- gh-pages/ — local Git worktree checked out to the gh-pages branch (built site only)
 
-```
-portfolio-website
-├── src
-│   ├── index.html            # Main HTML document
-│   ├── styles
-│   │   ├── base.css          # Base styles
-│   │   ├── navbar.css        # Navigation bar styles
-│   │   ├── sections.css      # Section-specific styles
-│   │   ├── components.css    # Reusable component styles
-│   │   ├── darkmode.css      # All dark mode overrides (centralized)
-│   │   ├── certificates.css  # Certificates gallery styles
-│   │   ├── skills-coding.css # Skills & coding profiles styles
-│   │   └── snake-game.css    # Snake game styles
-│   ├── scripts
-│   │   ├── main.js           # JavaScript functionality
-│   │   └── snake-game.js     # Snake game logic
-│   ├── images/               # Profile and icon images (SVGs for coding profiles)
-│   └── certificates/         # Certificate images
-├── .gitignore                # Files and directories to ignore by Git
-├── README.md                 # Project documentation
-└── LICENSE                   # Licensing information
-```
+## Design System
+- CSS custom properties for:
+  - Colors, spacing, radii, borders, shadows, transitions, typography
+- Minimal interactive states
+- Consistent visual language across light/dark modes
 
-## Setup Instructions
+## Development
+- Open src/index.html in a browser (no framework required).
+- Edit modular CSS and JS under src/.
 
-1. Clone the repository to your local machine using GitHub Desktop or the command line:
-   ```
-   git clone <repository-url>
-   ```
+## Build (minify/optimize)
+Requires Node.js (npm) once:
+  npm install -D clean-css-cli html-minifier-terser terser svgo
 
-2. Navigate to the project directory:
-   ```
-   cd portfolio-website
-   ```
+From project root (PowerShell):
+  # Clean & copy
+  Remove-Item -Recurse -Force dist -ErrorAction SilentlyContinue
+  New-Item -ItemType Directory -Path dist | Out-Null
+  robocopy .\src .\dist /E
 
-3. Open the `src/index.html` file in your web browser to view the portfolio website.
+  # Ensure styles folder exists
+  New-Item -ItemType Directory -Path dist\styles -Force | Out-Null
 
-## Features
+  # Minify CSS
+  Get-ChildItem .\src\styles\*.css | ForEach-Object {
+    npx cleancss -O2 -o ("dist\styles\" + .Name) .FullName
+  }
 
-- **Fully Responsive**: Works on all devices and screen sizes.
-- **Elegant Dark Mode**: Toggle dark mode for a visually consistent experience. All dark mode styles are managed in `darkmode.css`.
-- **Coding Profile Icons**: SVG icons for LeetCode, HackerRank, HackerEarth, and GitHub shine with accent color in dark mode for maximum visibility.
-- **Education CGPA Badge**: Always visible and styled for both light and dark themes.
-- **Easy Customization**: Modular CSS and HTML structure for quick updates.
+  # Minify JS if present
+  if (Test-Path .\src\main.js) { npx terser .\src\main.js -c -m -o .\dist\main.js }
+  if (Test-Path .\src\snake-game.js) { npx terser .\src\snake-game.js -c -m -o .\dist\snake-game.js }
 
-## Usage Guidelines
+  # Minify HTML
+  npx html-minifier-terser --collapse-whitespace --remove-comments --remove-redundant-attributes --minify-css true --minify-js true -o .\dist\index.html .\src\index.html
 
-- Customize the `src/index.html` file to add your own content and projects.
-- Modify the CSS files in `src/styles/` to change the appearance of the website.
-- Update the JavaScript files in `src/scripts/` to add interactivity or other features.
+  # GitHub Pages hint
+  New-Item -ItemType File -Path .\dist\.nojekyll -Force | Out-Null
+
+## Deploy to GitHub Pages
+First time (choose existing remote gh-pages if available):
+  git fetch --all
+  git ls-remote --exit-code --heads origin gh-pages *> 
+  if (0 -eq 0) { git worktree add .\gh-pages gh-pages } else { git worktree add .\gh-pages -b gh-pages }
+
+Publish built files:
+  robocopy .\dist .\gh-pages /MIR
+  git -C .\gh-pages add -A
+  git -C .\gh-pages commit -m "Build: optimized static site"
+  git -C .\gh-pages push -u origin gh-pages
+
+Enable Pages (once):
+  GitHub → Settings → Pages → Build and deployment → Deploy from a branch
+  Branch: gh-pages, Folder: /(root)
+
+## Branching
+- main — source of truth
+- optimize-pages — working branch for optimization and docs
+- gh-pages — built static site only (no source files)
 
 ## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
----
-
-© Rakesh B Choudhary, 2025
+This portfolio and content © Rakesh B Choudhary. All rights reserved.
